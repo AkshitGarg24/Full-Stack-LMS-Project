@@ -1,12 +1,17 @@
 import React from 'react'
-import { Routes, Route } from "react-router";
+import { Routes, Route, useMatch } from "react-router";
 import { AddCourse, Course, CourseList, Dashboard, Educator, Home, MyCourses, MyEnrollments, Player, StudentsEnrolled } from './pages/index.js';
+import Navbar from './components/student/Navbar.jsx';
 
 const App = () => {
+
+  const isEducator = useMatch('/educator/*')
+
   return (
     <div>
+      {!isEducator && <Navbar />}
       <Routes>
-        
+
         {/* Students Routes */}
 
         <Route path='/' element={<Home />} />
