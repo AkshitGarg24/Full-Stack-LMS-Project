@@ -10,6 +10,7 @@ const App = () => {
   return (
     <div>
       {!isEducator && <Navbar />}
+
       <Routes>
 
         {/* Students Routes */}
