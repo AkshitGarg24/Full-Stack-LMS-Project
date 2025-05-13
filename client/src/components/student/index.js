@@ -5,6 +5,7 @@ import Companies from "./Companies";
 import CoursesSection from "./CoursesSection";
 import CourseCard from "./CourseCard";
 import FooterStudents from "./FooterStudents";
+import Testimonials from "./Testimonials";
 
 export {
     Navbar,
@@ -13,5 +14,6 @@ export {
     Companies,
     CoursesSection,
     CourseCard,
-    FooterStudents
+    FooterStudents,
+    Testimonials
 }
