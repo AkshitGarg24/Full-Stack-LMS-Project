@@ -2,10 +2,16 @@ import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Search from "./Search";
 import Companies from "./Companies";
+import CoursesSection from "./CoursesSection";
+import CourseCard from "./CourseCard";
+import FooterStudents from "./FooterStudents";
 
 export {
     Navbar,
     Hero,
     Search,
-    Companies
+    Companies,
+    CoursesSection,
+    CourseCard,
+    FooterStudents
 }
