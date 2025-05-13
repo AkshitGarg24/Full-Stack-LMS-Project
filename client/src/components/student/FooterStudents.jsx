@@ -20,7 +20,7 @@ const FooterStudents = () => {
                     <p className='text-lg font-semibold'>Subscribe to our newsletter</p>
                     <p>The latest news, articles, and resources, sent to your inbox weekly.</p>
                     <form className='flex gap-2 justify-center'>
-                        <input type="email" placeholder='Enter Your Email' className='bg-gray-500 border-1 p-3 rounded-2xl' />
+                        <input type="email" placeholder='Enter Your Email' className='bg-gray-500 border-1 p-3 rounded-2xl focus:bg-gray-600' />
                         <button type='submit' className='bg-blue-600 p-2 rounded-2xl cursor-pointer hover:bg-blue-700'>Subscribe</button>
                     </form>
                 </div>

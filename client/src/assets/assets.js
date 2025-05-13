@@ -620,7 +620,7 @@ export const dummyCourses = [
                 "userId": "user_2qjlgkAqIMpiR2flWIRzvWKtE0w",
                 "rating": 5,
                 "_id": "6773acf160cb0ab974342248"
-            }
+            },
         ],
         "createdAt": "2024-12-27T10:00:00.000Z",
         "updatedAt": "2024-12-31T09:57:48.992Z",

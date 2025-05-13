@@ -11,7 +11,7 @@ const TestimonialCard = ({testimonial}) => {
           </div>
         </div>
         <div className="flex flex-col gap-2 px-5 py-8">
-          <div className="flex gap-1.5">{[...Array(5)].map((_,i) => (<img src={assets.star} alt="star" key={i} />))}</div>
+          <div className="flex gap-1.5">{[...Array(5)].map((_,i) => (<img src={i < testimonial.rating ? assets.star : assets.star_blank} alt="star" key={i} />))}</div>
           <p className="text-gray-500">{testimonial.feedback}</p>
         </div>
     </div>
