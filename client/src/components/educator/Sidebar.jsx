@@ -6,7 +6,7 @@ const Sidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <div className="grid grid-rows-4 w-75 h-full">
+    <div className="grid grid-rows-4 w-75">
       <Link to='/educator/dashboard'><div className={`flex gap-3 w-full h-18 items-center justify-center ${pathname == '/educator/dashboard' && "bg-blue-100 border-r-4 border-blue-700"}`}>
         <img src={assets.home_icon} alt="home_icon" />
         <p>Dashboard</p>

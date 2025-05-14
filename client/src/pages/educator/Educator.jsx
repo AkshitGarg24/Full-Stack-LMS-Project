@@ -5,7 +5,7 @@ import { Sidebar } from '../../components/educator'
 const Educator = () => {
   return (
     <div className='flex'>
-      <Sidebar />
+      <div className='md:block hidden'><Sidebar /></div>
       <Outlet />
     </div>
   )

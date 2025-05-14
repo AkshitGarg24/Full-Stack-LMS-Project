@@ -3,7 +3,7 @@ import { Sidebar } from '../../components/educator'
 
 const AddCourse = () => {
   return (
-    <form className='px-30 py-10 border-l-2 border-gray-300 flex flex-col gap-7 w-full justify-center'>
+    <form className='sm:px-30 px-10 py-10 border-l-2 border-gray-300 flex flex-col gap-7 w-full justify-center'>
       <div className='flex flex-col gap-2'>
         <p className='text-lg font-semibold'>Course Title</p>
         <input className='border-1 border-gray-300 p-3 rounded-2xl' type="text" placeholder='Enter Course Title' />
