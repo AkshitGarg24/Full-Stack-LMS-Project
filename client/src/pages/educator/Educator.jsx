@@ -4,7 +4,7 @@ import { Sidebar } from '../../components/educator'
 
 const Educator = () => {
   return (
-    <div>
+    <div className='flex'>
       <Sidebar />
       <Outlet />
     </div>
