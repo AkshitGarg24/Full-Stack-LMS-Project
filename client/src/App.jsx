@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <ScrollToTop />
 
-      {!isEducator && <Navbar />}
+      <Navbar />
 
       <Routes>
 
@@ -37,7 +37,7 @@ const App = () => {
 
       </Routes>
 
-      {!isEducator && <FooterStudents />}
+      <FooterStudents />
       
     </div>
   )

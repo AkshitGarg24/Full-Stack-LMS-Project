@@ -1,8 +1,10 @@
 import React from 'react'
+import { Sidebar } from '../../components/educator'
 
 const AddCourse = () => {
   return (
-    <div>AddCourse</div>
+    <div>
+    </div>
   )
 }
 
