@@ -3,6 +3,7 @@ import { Routes, Route, useMatch } from "react-router";
 import { AddCourse, Course, CourseList, Dashboard, Educator, Home, MyCourses, MyEnrollments, Player, StudentsEnrolled } from './pages/index.js';
 import Navbar from './components/student/Navbar.jsx';
 import FooterStudents from './components/student/FooterStudents.jsx';
+import ScrollToTop from './components/ScrollToTop.jsx';
 
 const App = () => {
 
@@ -10,6 +11,8 @@ const App = () => {
 
   return (
     <div>
+      <ScrollToTop />
+
       {!isEducator && <Navbar />}
 
       <Routes>
