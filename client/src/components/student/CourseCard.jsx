@@ -1,23 +1,14 @@
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets"
 import { useEffect, useState } from "react";
+import { calculateCourseRatings } from "../../utils/index.js";
 
 const CourseCard = ({course}) => {
 
   const [ratings, setRatings] = useState(0);
 
   useEffect(()=> {
-    if(course.courseRatings.length == 0){
-      setRatings(0);
-      return;
-    }
-    let totalRatings = 0;
-    course.courseRatings.forEach(ratings => {
-      totalRatings += ratings.rating
-    });
-
-    setRatings(Math.floor(totalRatings/course.courseRatings.length))
-
+    setRatings(calculateCourseRatings(course))
   }, []);
 
   return (
