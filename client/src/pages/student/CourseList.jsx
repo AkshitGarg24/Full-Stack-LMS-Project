@@ -19,7 +19,7 @@ const CourseList = () => {
 
 
       <div>
-        <div className='grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10 justify-items-center w-full mx-auto'>
+        <div className='flex flex-wrap justify-center justify-items-center w-full mx-auto px-4/10 gap-5'>
           {courses.map((course)=> <CourseCard course={course} />)}
           {courses.map((course)=> <CourseCard course={course} />)}
         </div>

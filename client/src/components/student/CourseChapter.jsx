@@ -30,21 +30,21 @@ const CourseChapter = ({ chapter }) => {
 
     return (
         <>
-            <div className='w-full h-15 bg-gray-100 border-1 border-gray-400 px-5 flex items-center justify-between cursor-pointer' onClick={() => handleClick()}>
+            <div className='sm:text-base text-sm w-full h-15 bg-gray-100 border-1 border-gray-400 px-5 flex items-center justify-between cursor-pointer' onClick={() => handleClick()}>
                 <div className='flex gap-3'>
                     <img src={assets.down_arrow_icon} alt="Down_Arrow_Icon" className='w-3' />
                     <div>{chapter.chapterTitle}</div>
                 </div>
-                <div>{chapter.chapterContent.length} lectures - {calculateSectionTime(chapter)}</div>
+                <div className="sm:block hidden">{chapter.chapterContent.length} lectures - {calculateSectionTime(chapter)}</div>
             </div>
-            {visible && <div className='py-5 px-10 bg-white border-1 border-gray-300'>
+            {visible && <div className='py-5 px-10 bg-white border-1 border-gray-300 sm:text-base text-sm'>
                 {chapter.chapterContent.map((lecture, index) =>
                 (<div key={index} className='flex items-center justify-between text-black h-10'>
                     <div className='flex items-center gap-3'>
                         <img src={assets.play_icon} alt="Play_Icon" />
                         <div>{lecture.lectureTitle}</div>
                     </div>
-                    <div>{calculateLectureTime(lecture.lectureDuration)}</div>
+                    <div className="sm:block hidden">{calculateLectureTime(lecture.lectureDuration)}</div>
                 </div>)
                 )}
             </div>}
