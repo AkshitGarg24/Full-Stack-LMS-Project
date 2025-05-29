@@ -1,17 +1,32 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { dummyCourses, assets } from './../../assets/assets.js'
 import { calculateCourseLessons, calculateCourseRatings } from '../../utils/index.js'
 import { CourseChapter } from '../../components/student/index.js'
+import { useLocation } from 'react-router-dom'
+import Error from '../common/Error.jsx'
 
 const Course = () => {
 
-  const course = dummyCourses[3];
-  const ratings = calculateCourseRatings(course)
-  
+  const { pathname } = useLocation()
+  const [course, setCourse] = useState(dummyCourses[0])
+  const [ratings, setRatings] = useState(0)
 
-  
+  useEffect(() => {
+    const filter = pathname.replace('/course/', '');
+    const course = dummyCourses.find(item => item._id === filter)
+    if (course) {
+      setCourse(course)
+      setRatings(calculateCourseRatings(course))
+    } else {
+      setCourse()
+    }
+
+  }, [pathname])
+
+
 
   return (
+    course ? 
     <div className='lg:flex-row flex flex-col-reverse sm:px-20 px-10 lg:py-30 py-20 gap-10 bg-gradient-to-b from-cyan-100/70'>
       <div className='w-full'>
         <div className='flex flex-col gap-5 mb-15'>
@@ -75,6 +90,8 @@ const Course = () => {
 
 
     </div>
+    :
+    <Error />
   )
 }
 

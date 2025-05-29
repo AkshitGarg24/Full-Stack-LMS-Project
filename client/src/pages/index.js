@@ -8,6 +8,7 @@ import Dashboard from "./educator/Dashboard";
 import StudentsEnrolled from "./educator/StudentsEnrolled";
 import AddCourse from "./educator/AddCourse";
 import MyCourses from "./educator/MyCourses";
+import Error from "./common/Error";
 
 export {
     Home,
@@ -19,5 +20,6 @@ export {
     Dashboard,
     AddCourse,
     MyCourses,
-    StudentsEnrolled
+    StudentsEnrolled,
+    Error
 }

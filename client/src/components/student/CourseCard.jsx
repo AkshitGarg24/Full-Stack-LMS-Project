@@ -22,7 +22,7 @@ const CourseCard = ({course}) => {
               {[...Array(5)].map((_, i)=>(<img key={i} src={i<ratings ? assets.star : assets.star_blank} />))}
               <p className="text-gray-500 ml-1">({course.courseRatings.length})</p>
             </div>
-            <p className="font-medium">{import.meta.env.VITE_CURRENCY} {course.coursePrice}</p>
+            <p className="font-medium">{import.meta.env.VITE_CURRENCY} {(course.coursePrice - course.discount * course.coursePrice / 100).toFixed(2)}</p>
         </div>
     </Link>
   )

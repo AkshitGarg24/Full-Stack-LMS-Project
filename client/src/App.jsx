@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route, useMatch } from "react-router";
-import { AddCourse, Course, CourseList, Dashboard, Educator, Home, MyCourses, MyEnrollments, Player, StudentsEnrolled } from './pages/index.js';
+import { AddCourse, Course, CourseList, Dashboard, Educator, Error, Home, MyCourses, MyEnrollments, Player, StudentsEnrolled } from './pages/index.js';
 import Navbar from './components/student/Navbar.jsx';
 import FooterStudents from './components/student/FooterStudents.jsx';
 import ScrollToTop from './components/ScrollToTop.jsx';
@@ -13,7 +13,7 @@ const App = () => {
     <div>
       <ScrollToTop />
 
-      <Navbar />
+      {!isEducator && <Navbar />}
 
       <Routes>
 
@@ -35,10 +35,12 @@ const App = () => {
           <Route path='add-course' element={<AddCourse />} />
         </Route>
 
+        <Route path='*' element={<Error />} />
+
       </Routes>
 
       <FooterStudents />
-      
+
     </div>
   )
 }
