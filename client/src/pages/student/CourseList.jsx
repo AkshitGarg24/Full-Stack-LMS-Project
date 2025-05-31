@@ -15,7 +15,8 @@ const CourseList = () => {
     if (pathname === '/course-list') {
       setTempCourses(courses);
     } else if (pathname.startsWith('/course-list/') && pathname.split('/').length > 2) {
-      const filter = pathname.replace('/course-list/', '');
+      const filter = decodeURIComponent(pathname.replace('/course-list/', ''));
+      console.log(filter)
       setTempCourses(
         courses.filter(item => item.courseTitle.toLowerCase().includes(filter.toLowerCase()))
       );

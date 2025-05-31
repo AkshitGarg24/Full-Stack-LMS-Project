@@ -1,4 +1,3 @@
-import React from 'react'
 import { Companies, CoursesSection, Hero, Testimonials } from '../../components/student'
 
 const Home = () => {

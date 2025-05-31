@@ -4,8 +4,8 @@ import { Sidebar } from '../../components/educator'
 
 const Educator = () => {
   return (
-    <div className='flex'>
-      <div className='md:block hidden'><Sidebar /></div>
+    <div className='flex md:flex-row flex-col min-h-[80vh]'>
+      <div className=''><Sidebar /></div>
       <Outlet />
     </div>
   )

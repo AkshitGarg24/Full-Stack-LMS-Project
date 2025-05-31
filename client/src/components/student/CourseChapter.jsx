@@ -1,31 +1,22 @@
 import { assets } from "../../assets/assets"
 import { useState } from "react";
+import { calculateSectionTime, calculateLectureTime } from "../../utils/index.js";
+import { useLocation } from "react-router-dom";
 
-const CourseChapter = ({ chapter }) => {
+const CourseChapter = ({ chapter, setPreview }) => {
 
     const [visible, setVisible] = useState(false)
-
-    function calculateSectionTime(chapter) {
-        let time = 0;
-        chapter.chapterContent.forEach(x => {
-            time += x.lectureDuration;
-        });
-        if (time < 60) {
-            return `${time} minutes`
-        }
-        return `${Math.floor(time / 60)} hours${time % 60 ? ` and ${time % 60} minutes` : ''}`;
-    }
-
-    function calculateLectureTime(time) {
-        if (time < 60) {
-            return `${time} minutes`
-        }
-        return `${Math.floor(time / 60)} hours${time % 60 ? ` and ${time % 60} minutes` : ''}`;
-    }
+    const { pathname } = useLocation()
 
     function handleClick() {
         setVisible(e => !e)
-        console.log(visible)
+    }
+
+    function handlePreviewVideo(lecture){
+        setPreview({
+            preview: true,
+            lecture
+        })
     }
 
     return (
@@ -44,7 +35,12 @@ const CourseChapter = ({ chapter }) => {
                         <img src={assets.play_icon} alt="Play_Icon" />
                         <div>{lecture.lectureTitle}</div>
                     </div>
-                    <div className="sm:block hidden">{calculateLectureTime(lecture.lectureDuration)}</div>
+                    <div className="flex gap-3">
+                        {pathname.includes('/course') && <div onClick={()=> handlePreviewVideo(lecture)} className={`text-blue-600 cursor-pointer ${index==0 ? "block": "hidden"}`}>Preview</div>}
+                        {pathname.includes('/player') && <div onClick={()=> handlePreviewVideo(lecture)} className={`text-blue-600 cursor-pointer`}>Watch</div>}
+                        <div className="sm:block hidden">{calculateLectureTime(lecture.lectureDuration)}</div>
+                    </div>
+                    
                 </div>)
                 )}
             </div>}

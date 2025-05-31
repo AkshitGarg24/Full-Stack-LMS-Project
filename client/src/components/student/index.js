@@ -7,6 +7,7 @@ import CourseCard from "./CourseCard";
 import FooterStudents from "./FooterStudents";
 import Testimonials from "./Testimonials";
 import CourseChapter from "./CourseChapter";
+import EnrolledCoursesRow from "./EnrolledCoursesRow";
 
 export {
     Navbar,
@@ -17,5 +18,6 @@ export {
     CourseCard,
     FooterStudents,
     Testimonials,
-    CourseChapter
+    CourseChapter,
+    EnrolledCoursesRow
 }

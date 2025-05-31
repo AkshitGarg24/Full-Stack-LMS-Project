@@ -4,7 +4,6 @@ import Course from "./student/Course";
 import MyEnrollments from "./student/MyEnrollments";
 import Player from "./student/Player";
 import Educator from "./educator/educator";
-import Dashboard from "./educator/Dashboard";
 import StudentsEnrolled from "./educator/StudentsEnrolled";
 import AddCourse from "./educator/AddCourse";
 import MyCourses from "./educator/MyCourses";
@@ -17,7 +16,6 @@ export {
     MyEnrollments,
     Player,
     Educator,
-    Dashboard,
     AddCourse,
     MyCourses,
     StudentsEnrolled,
